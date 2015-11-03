@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: rails_angular_skeleton_development
+
+test:
+  <<: *default
+  database: rails_angular_skeleton_test
+  
+production:
+  <<: *default
+  database: rails_angular_skeleton_production
+  username: rails_angular_skeleton
+  password: <%= ENV['RAILS_ANGULAR_SKELETON_DATABASE_PASSWORD'] %>
